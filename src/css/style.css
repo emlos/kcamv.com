@@ -1,0 +1,40 @@
+/* CSS Variables */
+
+:root {
+    --black: #000000;
+    --dark-blue: #14213d;
+    --yellow: #fca311;
+    --grey: #e5e5e5;
+    --white: #ffffff;
+    
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  summary {
+    list-style: none;
+  }
+
+  summary::before {
+    content: "> ";
+    display: inline;
+  }
+
+  summary > h1, h2, h3, h4, h5 {
+    display: inline;
+  }

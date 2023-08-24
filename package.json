@@ -1,0 +1,25 @@
+{
+  "name": "kcamv-commission-website",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rm -rf public && npx eleventy --serve --quiet",
+    "build": "rm -rf public && npx eleventy && echo -n \"site size:  \" && du -sh public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^3.1.0",
+  
+    "markdown-it": "^13.0.1",
+    "markdown-it-link-attributes": "^4.0.1",
+    "outdent": "^0.8.0"
+  }
+}
