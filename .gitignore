@@ -4,4 +4,4 @@ public/
 woff2sfnt-sfnt2woff/
 node_modules/*
 .directory
-
+package-lock.json

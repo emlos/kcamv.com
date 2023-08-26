@@ -1,8 +1,10 @@
 const Image = require("@11ty/eleventy-img");
-
+const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 const markdownIt = require("./src/markdown.js");
 const outdent = require("outdent");
 const path = require("node:path");
+
+const OUTPUTDIR = "public"
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(`./src${src}`, {
@@ -33,7 +35,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css/*.css");
   eleventyConfig.addWatchTarget("./src/css/*.css");
   eleventyConfig.addPassthroughCopy("./src/images/");
-  eleventyConfig.addPassthroughCopy({ "./src/favicons": "/" }); //favicons remap to root
   eleventyConfig.addPassthroughCopy("./src/scripts/*.js");
 
   
@@ -45,12 +46,14 @@ module.exports = function (eleventyConfig) {
 
 
   //plugins
-
+  eleventyConfig.addPlugin(faviconsPlugin, {"outputDir": OUTPUTDIR});
   eleventyConfig.setLibrary("md", markdownIt);
+
+
   return {
     dir: {
       input: "src",
-      output: "public",
+      output: OUTPUTDIR,
       markdownTemplateEngine: "njk",
     },
   };
