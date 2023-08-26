@@ -6,9 +6,12 @@ layout: "layouts/base.njk"
 <p>You can find me at:
 </p>
 <ul>
-    {% for link in footer.links %}
+    {% for link in socials.links %}
         <li class="footerlink">
-            <a href="{{ link.url }}">{{ link.name }}</a>
+            <a href="{{ link.url }}">
+                {{link.icon | safe}}
+                @{{ link.name }}
+            </a>
         </li>
     {% endfor %}
 </ul>

@@ -38,3 +38,9 @@
   summary > h1, h2, h3, h4, h5 {
     display: inline;
   }
+
+  svg {
+    height: 1em; /* Set the SVG height to match the font size */
+    width: auto; /* Let the width adjust automatically */
+    margin-right: 5px; /* Add some spacing between the icon and text */
+  }
