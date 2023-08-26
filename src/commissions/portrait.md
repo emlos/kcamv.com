@@ -1,6 +1,6 @@
 ---json
 {
-"type": "Portrait",
+"title": "Portrait",
 "images": ["/images/commission/example_portrait_1.png", "/images/commission/example_portrait_2.png"],
 "prices": {
     "portrait": "420420"

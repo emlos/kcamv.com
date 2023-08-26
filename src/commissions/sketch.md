@@ -1,6 +1,6 @@
 ---json
 {
-"type": "Sketch",
+"title": "Sketch",
 "images": ["/images/commission/example_sketch_1.png", "/images/commission/example_sketch_2.png"],
 "prices": {
     "Bust": "9",

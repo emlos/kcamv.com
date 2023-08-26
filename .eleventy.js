@@ -6,6 +6,13 @@ const path = require("node:path");
 
 const OUTPUTDIR = "public"
 
+function price(base, modifier=false) {
+  var multiplier = price
+  if (modifier)  multiplier = modifier
+  return parseFloat(base) * multiplier
+ 
+}
+
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(`./src${src}`, {
     widths: [300, 800, null],

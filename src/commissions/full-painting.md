@@ -1,6 +1,6 @@
 ---json
 {
-"type": "Full Painting",
+"title": "Full Painting",
 "images": ["/images/commission/example_painting_1.png", "/images/commission/example_painting_2.png"],
 "prices": {
     "Bust": "1",

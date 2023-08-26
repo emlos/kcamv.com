@@ -1,7 +1,10 @@
 {
   "links": [
-    { "name": "commissions", "url": "/home/" },
+    {
+      "name": "commissions",
+      "url": "/"
+    },
     { "name": "work examples", "url": "/examples/" },
     { "name": "social media", "url": "/about/" }
-  ]   
+  ]
 }

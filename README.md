@@ -1,8 +1,9 @@
-### 1.0.0
-
-- info
-- design
-- ux
+### 1.0.0 requirements
+- structure -> version bump
+- info -> version bump
+### 2.0.0
+- design -> version bump
+- ux -> version bump
 
 # LIVE SITE IS AT https://kcamv.neocities.org/
 
