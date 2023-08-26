@@ -3,6 +3,27 @@ title: "TODO title examples"
 layout: "layouts/base.njk"
 ---
 
-<div>
-    here i will show my art examples!
+<div class="gallery">
+    
+  <div class="column">{%for image in examples.json%}
+    {%if loop.index1 % 3 == 0%}
+    <img class="image" src="{{image.url}}" alt="{{image.title | slugify}}">
+    {%endif%}
+    {%endfor%}
+  </div>
+  <div class="column">
+   {%for image in examples.json%}
+    {%if loop.index1 % 3 == 1%}
+    <img class="image" src="{{image.url}}" alt="{{image.title | slugify}}">
+    {%endif%}
+    {%endfor%}
+  </div>
+  <div class="column">
+    {%for image in examples.json%}
+    {%if loop.index1 % 3 == 2%}
+    <img class="image" src="{{image.url}}" alt="{{image.title | slugify}}">
+    {%endif%}
+    {%endfor%}
+  </div>
 </div>
+
