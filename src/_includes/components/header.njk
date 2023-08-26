@@ -2,16 +2,17 @@
     <h1 class="title">
         <a href="{{ about.url }}">{{ about.title }}</a>
     </h1>
-    <nav class= "nav">
+    <nav class="nav">
         <ul class="nav-links">
             {% for link in header.links %}
                 <li class="nav-link">
                     <a href="{{ link.url }}">{{ link.name }}</a>
-                    {% if link.suburls %}
+                    {% if link.name == "commissions" %}
                         <ul class="sub-links">
-                            {% for url in link.suburls %}
+                            {% for item in collections.commission %}
+
                                 <li class="sub-link">
-                                    <a href="{{ url.url }}">{{ url.name }}</a>
+                                    <a href="{{ item.url }}">{{ item.data.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

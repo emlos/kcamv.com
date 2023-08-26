@@ -7,10 +7,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>{{ title if title else about.title }}</title>
             <link rel="stylesheet" href="{{ '/css/style.css' | url | safe }}">
-            <link type="text/plain" rel="author" href="/humans.txt"/>
-            {% if css %}
-                <link rel="stylesheet" href="{{ css | url | safe }}">
-            {% endif %}
             {% favicons './src/icon.png', appleIconBgColor='#123' %}
         {% endblock %}
     </head>
@@ -25,7 +21,6 @@
                 </main>
             {% endblock %}
             {% block footer %}
-              
             {% endblock %}
         </div>
     </body>
