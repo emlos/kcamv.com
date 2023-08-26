@@ -1,5 +1,6 @@
-<article class="container commission">
-    <h2>{{type.data.title}}</h2>
-    <hr> <img src="TODO {type.data.previewImage}" alt="{{type.data.title}} preview image">
-    <p>i am a commission!</p>
-</article>
+---
+layout: "layouts/base.njk"
+---
+  <div class="commission">
+    {{ content | safe }}
+  </div>

@@ -2,6 +2,6 @@
     "allEnabled": true,
     "tags": "commission",
     "price": 1,
-    "layout": "layouts/commission-base.njk"
+    "layout": "components/commission.njk"
     
 }
