@@ -1,6 +1,19 @@
 ---
 layout: "layouts/base.njk"
 ---
-  <div class="commission">
-    {{ content | safe }}
-  </div>
+
+<article class="commission">
+    <h1>{{ title }}</h1>
+    <hr>
+        {% include 'components/carousel.njk' %}
+        {{ content | safe }}
+        <h3>Prices</h3>
+        <table>
+            {% for category, price in prices %}
+                <tr>
+                    <td>{{ category }}:</td>
+                    <td>{{ price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </article>

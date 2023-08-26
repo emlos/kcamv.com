@@ -1,7 +1,7 @@
 ---json
 {
 "title": "Sketch",
-"images": ["/images/commission/example_sketch_1.png", "/images/commission/example_sketch_2.png"],
+"images": {"/images/commission/example_sketch_1.png":"preview image 1"},
 "prices": {
     "Bust": "9",
     "Half-body": "8",

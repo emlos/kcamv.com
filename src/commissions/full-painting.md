@@ -1,7 +1,7 @@
 ---json
 {
 "title": "Full Painting",
-"images": ["/images/commission/example_painting_1.png", "/images/commission/example_painting_2.png"],
+"images": {"/images/commission/example_painting_1.png":"preview image 1", "/images/commission/example_painting_2.png":"preview image 2"},
 "prices": {
     "Bust": "1",
     "Half-body": "2",

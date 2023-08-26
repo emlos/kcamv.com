@@ -6,12 +6,7 @@ const path = require("node:path");
 
 const OUTPUTDIR = "public"
 
-function price(base, modifier=false) {
-  var multiplier = price
-  if (modifier)  multiplier = modifier
-  return parseFloat(base) * multiplier
- 
-}
+
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(`./src${src}`, {
@@ -46,6 +41,7 @@ module.exports = function (eleventyConfig) {
 
   
   eleventyConfig.addShortcode("date", () => `${new Date().getUTCDate}`);
+  
   eleventyConfig.addPairedShortcode("tag", markdownToHtmlShortcode);
   eleventyConfig.addNunjucksAsyncShortcode("EleventyImage", imageShortcode);
 
