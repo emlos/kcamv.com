@@ -1,0 +1,14 @@
+---
+title: "My Socials!"
+layout: "layouts/base.njk"
+---
+
+<p>You can find me at:
+</p>
+<ul>
+    {% for link in footer.links %}
+        <li class="footerlink">
+            <a href="{{ link.url }}">{{ link.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
