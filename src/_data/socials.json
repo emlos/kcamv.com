@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "icon": "/socials/twitter.svg",
+      "name": "kcamv",
+      "url": "https://twitter.com/DisnutsNock"
+    },
+    {
+      "icon": "/socials/tumblr.svg",
+      "name": "disnutsnock",
+      "url": "https://disnutsnock.tumblr.com"
+    },
+    {
+      "icon": "/socials/ko-fi.svg",
+      "name": "kcamv",
+      "url": "#"
+    }
+  ]
+}
