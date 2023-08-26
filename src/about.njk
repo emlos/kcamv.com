@@ -7,11 +7,14 @@ layout: "layouts/base.njk"
 </p>
 <ul>
     {% for link in socials.links %}
-        <li class="footerlink">
-            <a href="{{ link.url }}">
-                {{link.icon | safe}}
-                @{{ link.name }}
-            </a>
+        <li class="social">
+            {% if link.url %}
+                <a href="{{ link.url }}">
+                {% endif %}
+                    {{ link.icon | safe }} @{{ link.name }}
+                {% if link.url %}
+                </a>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>

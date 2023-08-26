@@ -5,6 +5,7 @@
       "url": "/"
     },
     { "name": "work examples", "url": "/examples/" },
-    { "name": "social media", "url": "/about/" }
+    { "name": "social media", "url": "/about/" },
+    { "name": "rules", "url": "/rules/" }
   ]
 }
