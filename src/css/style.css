@@ -3,7 +3,7 @@
 :root {
   --beige: #c3b09a;
   --gray: #625c59;
-  --black: #1d1b1b;
+  --black: #1d1d1b;
   --white: #ededed;
   --link-before: #5b9dd5;
   --link-after: #4a6080;
@@ -49,9 +49,12 @@ body {
   font-family: "Arial", Arial, sans-serif;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  
+  position: relative;
+  background-blend-mode: overlay;
+  background-image: url("/images/backgroundTexture.png");
   background-color: var(--black);
   color: var(--white);
+  z-index: 500;
 }
 
 /*SHARED******/
@@ -70,11 +73,11 @@ nav {
 }
 
 main a {
-  color: var(--link-before)
+  color: var(--link-before);
 }
 
 main a:visited {
-  color: var(--link-after)
+  color: var(--link-after);
 }
 
 /*header*/
@@ -82,7 +85,6 @@ main a:visited {
 header {
   color: var(--black);
   background-color: var(--beige);
-  
 }
 
 header > * {
@@ -90,15 +92,11 @@ header > * {
 }
 
 header h1 {
-  
-  
   text-align: center;
 }
 
-header h1 .title{
+header h1 .title {
   color: var(--black);
-  
- 
 }
 
 header > nav {
@@ -106,7 +104,8 @@ header > nav {
   color: var(--white);
 }
 
-.nav-links, .sub-links {
+.nav-links,
+.sub-links {
   list-style-type: none;
   width: fit-content;
 }
@@ -128,7 +127,7 @@ header > nav {
   background-color: var(--white);
 }
 
-.sub-link *{
+.sub-link * {
   color: var(--gray);
 }
 
@@ -166,7 +165,6 @@ svg {
 
 /*gaallery in /examples/ */
 .column-container {
-  
   margin: 20px;
   padding: 20px;
   margin-top: 30px;
