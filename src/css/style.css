@@ -5,26 +5,25 @@
   --gray: #625c59;
   --black: #1d1b1b;
   --white: #ededed;
-
+  --link-before: #5b9dd5;
+  --link-after: #4a6080;
   --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 @font-face {
-  font-family: "bodoni-condensedbold";
-  src: url("/fonts/bodoni-condensed_bold-webfont.woff2") format("woff2"),
-    url("/fonts/bodoni-condensed_bold-webfont.woff") format("woff");
+  font-family: "bodoni_mtcondensed";
+  src: url("/fonts/bod_cr-webfont.woff2") format("woff2"),
+    url("/fonts/bod_cr-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "bodoni_mt_poster_compressedRg";
-  src: url("/fonts/bodoni_mt_poster_compressed_regular-webfont.woff2")
-      format("woff2"),
-    url("/fonts/bodoni_mt_poster_compressed_regular-webfont.woff")
-      format("woff");
-  font-weight: normal;
+  font-family: "bodoni_mtposter_compressed";
+  src: url("/fonts/bod_pstc-webfont.woff2") format("woff2"),
+    url("/fonts/bod_pstc-webfont.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -47,23 +46,101 @@ html:focus-within {
 }
 
 body {
+  font-family: "Arial", Arial, sans-serif;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  display: flex;
-  flex-direction: column;
+  
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/*SHARED******/
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "bodoni_mtposter_compressed", Arial, sans-serif;
+}
+
+nav {
+  font-family: "gill_sanscondensed", Arial, sans-serif;
+}
+
+main a {
+  color: var(--link-before)
+}
+
+main a:visited {
+  color: var(--link-after)
 }
 
 /*header*/
+
 header {
+  color: var(--black);
   background-color: var(--beige);
-  color: var(--black)
   
+}
+
+header > * {
+  width: 100%;
+}
+
+header h1 {
+  
+  
+  text-align: center;
+}
+
+header h1 .title{
+  color: var(--black);
+  
+ 
+}
+
+header > nav {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.nav-links, .sub-links {
+  list-style-type: none;
+  width: fit-content;
+}
+
+.nav-links > li {
+  display: inline-block;
+}
+
+.nav-link:hover .sub-links {
+  display: inline;
+}
+
+.sub-links {
+  padding: 10px;
+  width: fit-content;
+  display: none;
+  position: absolute;
+  top: 0px;
+  background-color: var(--white);
+}
+
+.sub-link *{
+  color: var(--gray);
 }
 
 /*workaround for summaries*/
 
 summary {
   list-style: none;
+}
+
+header a {
+  color: var(--white);
+  text-decoration: none;
 }
 
 summary::before {
@@ -87,10 +164,14 @@ svg {
   margin-right: 5px; /* Add some spacing between the icon and text */
 }
 
-/*EXAMPLES.NJK*/
+/*gaallery in /examples/ */
 .column-container {
+  
+  margin: 20px;
+  padding: 20px;
+  margin-top: 30px;
   column-count: 3;
-  column-gap: 10px;
+  column-gap: 20px;
 }
 .column-item {
   display: inline-block;
@@ -128,15 +209,22 @@ img {
 .triangle {
   width: 12px;
   height: 12px;
-  background-color: grey;
+  background-color: var(--white);
   margin: 5px;
   border-radius: 50%;
 }
 
 .triangle {
-  border-radius: 0;
-  background-color: transparent;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 12px solid grey;
+  background-color: var(--gray);
+}
+
+.carousel button {
+  cursor: pointer;
+  color: var(--white);
+  border: var(--white) solid 2px;
+  background: none;
+}
+
+.carousel button:hover {
+  background: #c3b09a34;
 }
