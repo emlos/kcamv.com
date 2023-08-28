@@ -4,8 +4,8 @@
       "name": "Commissions",
       "url": "/"
     },
+    { "name": "Rules", "url": "/rules/" },
     { "name": "Work Examples", "url": "/examples/" },
-    { "name": "Social Media", "url": "/about/" },
-    { "name": "Rules", "url": "/rules/" }
+    { "name": "Social Media", "url": "/about/" }
   ]
 }

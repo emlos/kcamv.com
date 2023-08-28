@@ -73,3 +73,14 @@ alternatively you can go to the `public` folder and double click the first index
 
 
 congrats! what you did is called **building from source** and you did it! :D
+
+---
+
+todo:
+- rework css for header (ew)
+- fix nav and anchor it to the hover (i dotn want to)
+- UTILIZE THE ELEVENTY IMAGE PLUGIN (i am BEGGING you)
+- svgs need to be white/gray/beige (easy :D)
+- preview images
+- clear font sizes
+- page layouts but prettier
