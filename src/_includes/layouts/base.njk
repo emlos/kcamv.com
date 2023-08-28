@@ -6,22 +6,20 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>{{ title if title else about.title }}</title>
-            <link rel="stylesheet" href="{{ '/css/style.css' | url | safe }}">
+            <link rel="stylesheet" href="{{ '/css/style.css' | url | safe }}"> 
             {% favicons './src/icon.png', appleIconBgColor='#123' %}
+            <link rel="stylesheet" href="{{ '/css/normalise.css' | url | safe }}"> 
         {% endblock %}
     </head>
     <body>
-        <div class="content">
-            {% block header %}
-                {% include "components/header.njk" %}
-            {% endblock %}
-            {% block body %}
-                <main class="main container">
-                    {{ content | safe }}
-                </main>
-            {% endblock %}
-            {% block footer %}
-            {% endblock %}
-        </div>
+        {% block header %}
+            {% include "components/header.njk" %}
+        {% endblock %}
+        {% block body %}
+            <main class="main container">
+                {{ content | safe }}
+            </main>
+        {% endblock %}
+        {% block footer %}{% endblock %}
     </body>
 </html>

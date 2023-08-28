@@ -8,11 +8,11 @@ layout: "layouts/base.njk"
         {% include 'components/carousel.njk' %}
         {{ content | safe }}
         <h3>Prices</h3>
-        <table>
+        <table class="prices">
             {% for category, price in prices %}
-                <tr>
+                <tr class="price">
                     <td>{{ category }}:</td>
-                    <td>{{ price }}</td>
+                    <td>{{ price }}&euro; </td>
                 </tr>
             {% endfor %}
         </table>

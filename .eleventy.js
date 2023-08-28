@@ -37,6 +37,10 @@ function markdownToHtmlShortcode(children, tag, class_ = false, id = false) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css/*.css");
   eleventyConfig.addWatchTarget("./src/css/*.css");
+  eleventyConfig.addPassthroughCopy("./src/fonts/*.woff");
+  eleventyConfig.addPassthroughCopy("./src/fonts/*.woff2");
+
+
   eleventyConfig.addPassthroughCopy("./src/images/");
   eleventyConfig.addPassthroughCopy("./src/scripts/*.js");
 

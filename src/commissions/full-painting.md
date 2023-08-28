@@ -3,13 +3,13 @@
 "title": "Full Painting",
 "images": {"/images/commission/example_painting_1.png":"preview image 1", "/images/commission/example_painting_2.png":"preview image 2"},
 "prices": {
-    "Bust": "1",
-    "Half-body": "2",
-    "Full-body": "3"
+    "Bust": "75",
+    "Half-body": "120",
+    "Full-body": "150"
 }
 }
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est ante in nibh mauris cursus. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Amet justo donec enim diam vulputate ut.
+These are finished artworks, with a clean lineart, complex lighting and shading and detailed rendering. Full Paintings take more time to finish, because they are much more laborious than the other commissions. They can include a background color.
 
-Ornare suspendisse sed nisi lacus sed viverra. Sit amet cursus sit amet dictum sit amet justo. Lacus vel facilisis volutpat est velit. Massa enim nec dui nunc. Eget aliquet nibh praesent tristique magna sit. In arcu cursus euismod quis viverra nibh cras pulvinar mattis.
+The prices depend on whether the commission in question is a bust, a half body and full body.

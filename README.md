@@ -1,6 +1,6 @@
 ### 1.0.0 requirements
-- structure -> version bump
-- info -> version bump
+- ~~structure -> version bump~~
+- ~~info -> version bump~~
 ### 2.0.0
 - design -> version bump
 - ux -> version bump
