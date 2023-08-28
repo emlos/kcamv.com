@@ -5,14 +5,14 @@
     <nav class="nav">
         <ul class="nav-links">
             {% for link in header.links %}
-                <li class="nav-link">
-                    <a href="{{ link.url }}">{{ link.name }}</a>
+                <li class="nav-link {{"current" if link.url else ""}}">
+                    <a href="{{ link.url | url |safe}}">{{ link.name }}</a>
                     {% if link.name == "commissions" %}
                         <ul class="sub-links">
                             {% for item in collections.commission %}
 
                                 <li class="sub-link">
-                                    <a href="{{ item.url }}">{{ item.data.title }}</a>
+                                    <a href="{{ item.url | url | safe}}">{{ item.data.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

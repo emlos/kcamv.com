@@ -47,19 +47,16 @@
 
 
   /*EXAMPLES.NJK8888888888888888888888*/
-  .gallery {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
+  .column-container {
+    column-count: 3;
+    column-gap: 10px;
   }
-
-  .column {
-    flex: 1;
-    max-width: calc(33.33% - 10px); /* Account for margins */
-    margin: 0 5px;
+  .column-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
   }
-
-  .image {
+  img {
     width: 100%;
     height: auto;
   }
