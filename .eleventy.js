@@ -9,12 +9,12 @@ const OUTPUTDIR = "public";
 const GALLERY_SIZE = 600;
 
 
-async function imageShortcode(src, alt, sizes) {
+async function imageShortcode(src, alt, sizes, subdir="") {
   let metadata = await Image(`./src${src}`, {
     widths: [300, 800, null],
     formats: ["avif", "jpeg"],
-    urlPath: "/images/",
-    outputDir: "./public/images/",
+    urlPath: "/images/" + subdir,
+    outputDir: "./public/images/"+subdir,
   });
 
   let imageAttributes = {
@@ -48,14 +48,17 @@ module.exports = function (eleventyConfig) {
 
   // 1. to filter images for the gallery and add them to a collection for easier iteration :skull:
   eleventyConfig.addCollection("artexamples", async (collectionApi) => {
-    const base = "./src/images/examples/";
+    const base = "./src/images/**/**/";
     let images = await glob(base + "*.{png,jpg,jpeg}");
     
     //actual collection to be born into eleventy proper
-    let collection = images.map((i) => {
+    let collection = images.filter((j)=>{
+      return j
+    }).map((i) => {
       return {
         url: i.split("./src")[1], // "/images/examples/xxxxxxx.png", removes the ./src lol
-        title: "test"
+        title: i.split('\\').pop().split('/').pop()
+
       };
     });
 
