@@ -8,7 +8,7 @@ const glob = require("glob-promise");
 const OUTPUTDIR = "public";
 const GALLERY_SIZE = 600;
 
-async function imageShortcode(src, alt, sizes, subdir = "") {
+async function imageShortcode(src, alt, sizes, subdir="") {
   let metadata = await Image(`./src${src}`, {
     widths: [300, 800, null],
     formats: ["avif", "jpeg"],
@@ -48,33 +48,33 @@ module.exports = function (eleventyConfig) {
   
   eleventyConfig.addCollection("examples", async (collectionApi) => {
     const base = "./src/images/**/**/";
-    let images = await glob(base + "*.{png,jpg,jpeg}");
+    let images = await glob(base + "*.{png,jpg}");
 
     return makeImgCollection(images);
   });
   eleventyConfig.addCollection("sketches", async (collectionApi) => {
     const base = "./src/images/**/sketches/";
-    let images = await glob(base + "*.{png,jpg,jpeg}");
+    let images = await glob(base + "*.{png,jpg}");
 
     return makeImgCollection(images,sketch=false);
   });
 
   eleventyConfig.addCollection("flats", async (collectionApi) => {
     const base = "./src/images/**/flats/";
-    let images = await glob(base + "*.{png,jpg,jpeg}");
+    let images = await glob(base + "*.{png,jpg}");
 
     return makeImgCollection(images,sketch=false);
   });
   eleventyConfig.addCollection("paintings", async (collectionApi) => {
     const base = "./src/images/**/paintings/";
-    let images = await glob(base + "*.{png,jpg,jpeg}");
+    let images = await glob(base + "*.{png,jpg}");
 
     return makeImgCollection(images,sketch=false);
   });
 
   eleventyConfig.addCollection("portraits", async (collectionApi) => {
     const base = "./src/images/**/portraits/";
-    let images = await glob(base + "*.{png,jpg,jpeg}");
+    let images = await glob(base + "*.{png,jpg}");
 
     return makeImgCollection(images,sketch=false);
   });
@@ -107,6 +107,7 @@ function makeImgCollection(images, sketch = true) {
     })
     .map((i) => {
       return {
+        relDirPath: i.split("./src")[1].split('/').slice(0,-1).join("/"),
         source: i.split("./src")[1], // "/images/examples/xxxxxxx.png", removes the ./src lol
         title: i
           .split("\\")

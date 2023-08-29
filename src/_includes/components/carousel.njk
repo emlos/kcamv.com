@@ -1,10 +1,14 @@
 <div class="carousel">
     <button id="prevButton">◀</button>
     <div class="images">
-        {% for image in collections[tag] %}
-        
-            <img class="carousel-img" src="{{ image.source}}" alt="{{ image.title }}" id="img{{ loop.index0 }}">
-            {% endfor %}
+
+        {% set output = ["commission/",tag,"/thumbs/"] | join %}
+        {% asyncEach image in collections[tag] %}
+            <div class="carousel-img"  id="img{{ loop.index0 }}">
+
+            {% EleventyImage image.source, image.title, "(min-width: 30em) 50vw, 100vw", output%}
+           </div>
+            {% endeach %}
         </div>
         <button id="nextButton">▶</button>
     </div>

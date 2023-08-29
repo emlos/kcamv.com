@@ -6,13 +6,15 @@ layout: "layouts/base.njk"
 
 
 <div class="gallery column-container">
-  {% for image in collections.examples | reverse%}
- 
-    <div class="column-item">
-      <img class="image" src="{{ image.source | url | safe }}" alt="{{ image.title }}">
+  {% asyncEach image in collections.examples | reverse%}
+
+    <div class="column-item"> 
+         {% set output = [image.relDirPath.replace("/images/",""),"/thumbs/"] | join %}
+    
+        {% EleventyImage image.source, image.title, "(min-width: 30em) 50vw, 100vw",output %}
     </div>
     
-    {% endfor %}
+    {% endeach %}
   </div>
   <hr>
   

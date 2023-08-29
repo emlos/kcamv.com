@@ -191,8 +191,6 @@ img {
 
 .carousel-img {
   display: none;
-  max-width: 100%;
-  max-height: 400px;
 }
 
 .images .active {
@@ -219,6 +217,8 @@ img {
 }
 
 .carousel button {
+  height: 10em;width: 5em;
+  margin: 1em;
   cursor: pointer;
   color: var(--white);
   border: var(--white) solid 2px;
@@ -235,4 +235,5 @@ img {
   
   width: 200px;
   height: auto;
+  max-height: 200px;
 }

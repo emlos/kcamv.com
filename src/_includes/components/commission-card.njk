@@ -3,14 +3,15 @@
         <h1>{{ type.data.title }}</h1>
     </a>
     <hr>
-        <img src="{{ collections[type.data.tag][0].source }}" alt="{{ collections[type.data.tag][0].title }} preview image">
-            <table class="prices">
-                {% for category, price in prices %}
-                    <tr class="price">
-                        <td>{{ category }}:</td>
-                        <td>{{ price }}&euro;
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
-        </article>
+        {% set output = ["commission/",type.data.tag,"/thumbs/"] | join %}
+        {% EleventyImage collections[type.data.tag][0].source, collections[type.data.tag][0].title, "(min-width: 30em) 50vw, 100vw", output %}
+        <table class="prices">
+            {% for category, price in prices %}
+                <tr class="price">
+                    <td>{{ category }}:</td>
+                    <td>{{ price }}&euro;
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </article>

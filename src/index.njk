@@ -3,6 +3,6 @@ title: "Commission Info!"
 layout: "layouts/base.njk"
 ---
 
-{%for type in collections.commission%}
+{%asyncEach type in collections.commission%}
 {%include 'components/commission-card.njk'%}
-{%endfor%}
+{%endeach%}
