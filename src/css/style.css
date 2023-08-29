@@ -50,8 +50,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   position: relative;
-  background-blend-mode: overlay;
-  background-image: url("/images/backgroundTexture.png");
+
   background-color: var(--black);
   color: var(--white);
   z-index: 500;
@@ -66,6 +65,7 @@ body {
 
 h1 {
   font-family: "bodoni_mtposter_compressed", Arial, sans-serif;
+  font-size: 5pt;
 }
 
 nav {
@@ -165,16 +165,18 @@ svg {
 
 /*gaallery in /examples/ */
 .column-container {
-  margin: 20px;
+  margin: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
   padding: 20px;
   margin-top: 30px;
   column-count: 3;
-  column-gap: 20px;
+  column-gap: 25px;
 }
 .column-item {
   display: inline-block;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 img {
   width: 100%;
