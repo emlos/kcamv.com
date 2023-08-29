@@ -8,13 +8,12 @@ const glob = require("glob-promise");
 const OUTPUTDIR = "public";
 const GALLERY_SIZE = 600;
 
-
-async function imageShortcode(src, alt, sizes, subdir="") {
+async function imageShortcode(src, alt, sizes, subdir = "") {
   let metadata = await Image(`./src${src}`, {
     widths: [300, 800, null],
     formats: ["avif", "jpeg"],
     urlPath: "/images/" + subdir,
-    outputDir: "./public/images/"+subdir,
+    outputDir: "./public/images/" + subdir,
   });
 
   let imageAttributes = {
@@ -40,29 +39,44 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/fonts/*.woff");
   eleventyConfig.addPassthroughCopy("./src/fonts/*.woff2");
 
-
   eleventyConfig.addPassthroughCopy("./src/images/");
   eleventyConfig.addPassthroughCopy("./src/scripts/*.js");
 
-  //collections [code is only allowed with GOTHIC comments! boo!]
+  //collections
 
-  // 1. to filter images for the gallery and add them to a collection for easier iteration :skull:
-  eleventyConfig.addCollection("artexamples", async (collectionApi) => {
+  // all images in images
+  
+  eleventyConfig.addCollection("examples", async (collectionApi) => {
     const base = "./src/images/**/**/";
     let images = await glob(base + "*.{png,jpg,jpeg}");
-    
-    //actual collection to be born into eleventy proper
-    let collection = images.filter((j)=>{
-      return j
-    }).map((i) => {
-      return {
-        url: i.split("./src")[1], // "/images/examples/xxxxxxx.png", removes the ./src lol
-        title: i.split('\\').pop().split('/').pop()
 
-      };
-    });
+    return makeImgCollection(images);
+  });
+  eleventyConfig.addCollection("sketches", async (collectionApi) => {
+    const base = "./src/images/**/sketches/";
+    let images = await glob(base + "*.{png,jpg,jpeg}");
 
-    return collection;
+    return makeImgCollection(images,sketch=false);
+  });
+
+  eleventyConfig.addCollection("flats", async (collectionApi) => {
+    const base = "./src/images/**/flats/";
+    let images = await glob(base + "*.{png,jpg,jpeg}");
+
+    return makeImgCollection(images,sketch=false);
+  });
+  eleventyConfig.addCollection("paintings", async (collectionApi) => {
+    const base = "./src/images/**/paintings/";
+    let images = await glob(base + "*.{png,jpg,jpeg}");
+
+    return makeImgCollection(images,sketch=false);
+  });
+
+  eleventyConfig.addCollection("portraits", async (collectionApi) => {
+    const base = "./src/images/**/portraits/";
+    let images = await glob(base + "*.{png,jpg,jpeg}");
+
+    return makeImgCollection(images,sketch=false);
   });
 
   //shortcodes
@@ -84,3 +98,26 @@ module.exports = function (eleventyConfig) {
   };
 };
 
+function makeImgCollection(images, sketch = true) {
+  //actual collection to be born into eleventy proper
+  let collection = images
+    .filter((j) => {
+
+      return sketch? j.split('/').indexOf("sketches") < 0 : true;
+    })
+    .map((i) => {
+      return {
+        source: i.split("./src")[1], // "/images/examples/xxxxxxx.png", removes the ./src lol
+        title: i
+          .split("\\")
+          .pop()
+          .split("/")
+          .pop()
+          .split(".")[0]
+          .replaceAll("_", " "),
+
+      };
+    });
+
+  return collection;
+}

@@ -1,13 +1,12 @@
 ---json
 {
 "title": "Flat Colour",
-"images": {"/images/commission/example_flat_1.png":"preview image 1"},
 "prices": {
     "Bust": "40",
     "Half-body": "50",
     "Full-body": "60"
-}
-
+},
+"tag": "flats"
 }
 ---
 

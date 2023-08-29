@@ -1,9 +1,9 @@
-<article class="container commission">
+<article class="commission-card">
     <a href="{{ type.url }}">
         <h1>{{ type.data.title }}</h1>
     </a>
     <hr>
-        <img src="{{ type.data.previewImage }}" alt="{{ type.data.title }} preview image">
+        <img src="{{ collections[type.data.tag][0].source }}" alt="{{ collections[type.data.tag][0].title }} preview image">
             <table class="prices">
                 {% for category, price in prices %}
                     <tr class="price">

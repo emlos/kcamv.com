@@ -3,11 +3,15 @@ title: "TODO title examples"
 layout: "layouts/base.njk"
 ---
 
+
+
 <div class="gallery column-container">
-  {% for image in collections.artexamples %}
+  {% for image in collections.examples | reverse%}
+ 
     <div class="column-item">
-      <img class="image" src="{{ image.url | url | safe }}" alt="{{ image.title | slugify }}">
+      <img class="image" src="{{ image.source | url | safe }}" alt="{{ image.title }}">
     </div>
+    
     {% endfor %}
   </div>
   <hr>

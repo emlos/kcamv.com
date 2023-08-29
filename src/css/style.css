@@ -228,3 +228,11 @@ img {
 .carousel button:hover {
   background: #c3b09a34;
 }
+
+/*comission card.njk for index.njk*/
+
+.commission-card img {
+  
+  width: 200px;
+  height: auto;
+}
